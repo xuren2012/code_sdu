@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+             http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+              version="2.0">
+    <!--
+        持久化单元
+        name:持久化单元名称，唯一性
+        transaction-type:事务类型
+             RESOURCE_LOCAL   本地事务
+             JTA  分布式事务
+    -->
+    <persistence-unit name="jpa01" transaction-type="RESOURCE_LOCAL">
+        <!-- 配置 JPA 规范的服务提供商 -->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <!--指定实体类，此项可省略-->
+        <class>com.sdu.springdata.domain.Article</class>
+        <properties>
+            <!--数据库驱动-->
+           <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+           <property name="javax.persistence.jdbc.url" value="jdbc:mysql:///springdata?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;serverTimezone=GMT%2B8"/>
+           <property name="javax.persistence.jdbc.user" value="root"/>
+           <property name="javax.persistence.jdbc.password" value="123456"/>
+           <!--jpa核心配置中兼容hibernate的配置-->
+           <property name="hibernate.show_sql" value="true"/>
+           <property name="hibernate.format_sql" value="true"/>
+           <!--自动建表
+                update:如果表存在则使用；否则创建
+                create:不管表是否存在，每次都会创建表
+                -->
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
+</persistence>

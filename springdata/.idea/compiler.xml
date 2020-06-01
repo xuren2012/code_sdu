@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="01-jpa-review" />
+        <module name="02-sd-jpa-quickstart" />
+        <module name="03-sd-jpa-manytable" />
+        <module name="04-sd-redis" />
+        <module name="05-es-review" />
+        <module name="06-sd-es" />
+        <module name="07-sd-mongodb" />
+        <module name="08-project" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="09-case" target="1.8" />
+      <module name="09-demo" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

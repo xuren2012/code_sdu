@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/jdbc
+		http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+		http://www.springframework.org/schema/data/jpa
+		http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+        
+    <!--配置扫描包-->
+    <context:component-scan base-package="com.sdu.springdata"/>
+     <!--配置数据源-->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+
+        <property name="url" value="jdbc:mysql:///springdata?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;serverTimezone=GMT%2B8"/>
+
+        <property name="username" value="root"/>
+        <property name="password" value="123456"/>
+    </bean>
+    <!--配置EntityManagerFactory,可以生成EntityManager-->
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <!--注入数据源-->
+        <property name="dataSource" ref="dataSource"/>
+        <!--指定实体类所在的包-->
+        <property name="packagesToScan" value="com.sdu.springdata.domain"/>
+        <!--指定jpa实现提供者-->
+        <property name="persistenceProvider">
+            <bean class="org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider"/>
+        </property>
+
+        <!--SpringData Jpa兼容Hibernate使用-->
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <!--是否自动建表-->
+                <property name="generateDdl" value="true"/>
+                <!--数据库厂商名称-->
+                <property name="database" value="MYSQL"/>
+                <!--是否显示sql语句-->
+                <property name="showSql" value="true"/>
+
+            </bean>
+        </property>
+    </bean>
+    <!--事务管理器-->
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <!--<property name="dataSource" ref="dataSource"/>-->
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+
+    <!--jpa:repository配置
+      spring通过代理的方式为dao接口提供实现类，需要指明为哪些接口产生代理类
+      -->
+    <jpa:repositories base-package="com.sdu.springdata.dao"
+                      entity-manager-factory-ref="entityManagerFactory"
+                      transaction-manager-ref="transactionManager"
+    />
+</beans>

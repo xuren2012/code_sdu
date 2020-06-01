@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/01-jpa-review" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/02-sd-jpa-quickstart" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/03-sd-jpa-manytable" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/04-sd-redis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/05-es-review" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/06-sd-es" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/07-sd-mongodb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/08-project" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/09-case" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/09-demo" charset="UTF-8" />
+  </component>
+</project>
