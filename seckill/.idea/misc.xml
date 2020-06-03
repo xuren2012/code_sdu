@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/seckillServer/pom.xml" />
+        <option value="$PROJECT_DIR$/seckillTimeServer/pom.xml" />
+        <option value="$PROJECT_DIR$/seckillStock/pom.xml" />
+        <option value="$PROJECT_DIR$/seckillStorage/pom.xml" />
+        <option value="$PROJECT_DIR$/seckillUser/pom.xml" />
+        <option value="$PROJECT_DIR$/seckillOrder/pom.xml" />
+        <option value="$PROJECT_DIR$/ZuulServer/pom.xml" />
+        <option value="$PROJECT_DIR$/seckillClient/pom.xml" />
+        <option value="$PROJECT_DIR$/seckillConfig/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>

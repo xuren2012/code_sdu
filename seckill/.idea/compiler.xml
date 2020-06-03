@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="seckill" />
+        <module name="seckillClient" />
+        <module name="seckillConfig" />
+        <module name="seckillOrder" />
+        <module name="seckillStock" />
+        <module name="seckillStorage" />
+        <module name="seckillTimeServer" />
+        <module name="seckillUser" />
+        <module name="ZuulServer" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="seckill" target="1.8" />
+      <module name="seckillClient" target="1.8" />
+      <module name="seckillConfig" target="1.8" />
+      <module name="seckillOrder" target="1.8" />
+      <module name="seckillStock" target="1.8" />
+      <module name="seckillStorage" target="1.8" />
+      <module name="seckillTimeServer" target="1.8" />
+      <module name="seckillUser" target="1.8" />
+      <module name="ZuulServer" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ZuulServer" options="-parameters" />
+      <module name="seckill" options="-parameters" />
+      <module name="seckillClient" options="-parameters" />
+      <module name="seckillConfig" options="-parameters" />
+      <module name="seckillOrder" options="-parameters" />
+      <module name="seckillStock" options="-parameters" />
+      <module name="seckillStorage" options="-parameters" />
+      <module name="seckillTimeServer" options="-parameters" />
+      <module name="seckillUser" options="-parameters" />
+    </option>
+  </component>
+</project>
